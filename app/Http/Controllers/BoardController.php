@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
-
-class BoardController extends BaseController
+class BoardController extends Controller
 {
-
     /**
      * 掲示板一覧
      */
