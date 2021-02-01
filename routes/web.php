@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/board', 'BoardController@index');
+Route::get('/board', 'App\Http\Controllers\BoardController@index');
