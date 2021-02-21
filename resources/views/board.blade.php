@@ -18,7 +18,7 @@
         </div>
 
         <div class="post-form">
-        <form action="post.php" method="post">
+        <form action="/board" method="post">
             <label id="userName">名前</label>
             <input id="userName" type="text" name="userName" maxlength="6">
             <br>

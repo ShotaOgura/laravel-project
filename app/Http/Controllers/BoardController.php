@@ -19,16 +19,17 @@ class BoardController extends Controller
 
 
     /**
-     *  TODO 投稿を追加する
+     * 投稿を追加する
      */
     public function createPost()
     {
-        // 
-        $stmt = $pdo->prepare("INSERT INTO `posts` (`userName`, `posted`, `contents`) VALUES(?, NOW(), ?)");
-        $stmt->execute([$_POST["userName"], $_POST["contents"]]);
-
-        // 接続を閉じる
-        $pdo = null;
-
+        // 投稿データの保存
+        $post = new \App\Models\Post;
+        $post->userName = 'test';
+        $post->posted = '2021-2-21 13:44:00';
+        $post->contents = '初登校デフ！！！ぽよーーーーーー！！！';
+        $post->save(); 
+        
+        return redirect('/board');
     }
 }

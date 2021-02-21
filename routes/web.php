@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/board');
 });
-
 Route::get('/board', 'App\Http\Controllers\BoardController@index');
+Route::post('/board', 'App\Http\Controllers\BoardController@createPost');
