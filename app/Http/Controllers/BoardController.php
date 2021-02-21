@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class BoardController extends Controller
 {
     /**
@@ -21,13 +23,16 @@ class BoardController extends Controller
     /**
      * 投稿を追加する
      */
-    public function createPost()
+    public function createPost(Request $request)
     {
         // 投稿データの保存
         $post = new \App\Models\Post;
-        $post->userName = 'test';
-        $post->posted = '2021-2-21 13:44:00';
-        $post->contents = '初登校デフ！！！ぽよーーーーーー！！！';
+        $post->userName = $request->input('userName') ?? '名無し';
+        $post->contents = $request->input('contents') ?? '';
+        
+
+        $post->posted = new \DateTime('Asia/Tokyo');
+        $post->timestamps = false;
         $post->save(); 
         
         return redirect('/board');
